@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+}
+
+.container {
+    width: 1080px;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(../img/star-wars-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    perspective: 1000px;
+}
+.card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.card:active {
+    transform: scale(.95);
+    transition: transform .2s;
+}
+.card.flip {
+    transform: rotateY(180deg);
+}
+.card.win {
+    border: 2px solid yellowgreen;
+    border-radius: 5px;
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.winner {
+    width: 100%;
+    display: none;
+}
+
+
+
